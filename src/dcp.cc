@@ -412,7 +412,7 @@ DCP::write_volindex (Standard standard) const
 }
 
 
-void
+std::string
 DCP::write_assetmap (
 	Standard standard, string pkl_uuid, boost::filesystem::path pkl_path,
 	string issuer, string creator, string issue_date, string annotation_text
@@ -445,7 +445,9 @@ DCP::write_assetmap (
 		DCP_ASSERT (false);
 	}
 
-	root->add_child("Id")->add_child_text ("urn:uuid:" + make_uuid());
+	std::string id = make_uuid();
+
+	root->add_child("Id")->add_child_text ("urn:uuid:" + id);
 	root->add_child("AnnotationText")->add_child_text (annotation_text);
 
 	switch (standard) {
@@ -483,10 +485,12 @@ DCP::write_assetmap (
 
 	doc.write_to_file_formatted (p.string (), "UTF-8");
 	_asset_map = p;
+
+	return id;
 }
 
 
-void
+std::string
 DCP::write_xml (
 	string issuer,
 	string creator,
@@ -534,7 +538,7 @@ DCP::write_xml (
 	pkl->write (pkl_path, signer);
 
 	write_volindex (standard);
-	write_assetmap (standard, pkl->id(), pkl_path, issuer, creator, issue_date, annotation_text);
+	return write_assetmap (standard, pkl->id(), pkl_path, issuer, creator, issue_date, annotation_text);
 }
 
 

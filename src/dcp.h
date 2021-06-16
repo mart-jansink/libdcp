@@ -150,7 +150,7 @@ public:
 	 *  @param signer Signer to use
 	 *  @param name_format Name format to use for the CPL and PKL filenames
 	 */
-	void write_xml (
+	std::string write_xml (
 		std::string issuer = String::compose("libdcp %1", dcp::version),
 		std::string creator = String::compose("libdcp %1", dcp::version),
 		std::string issue_date = LocalTime().as_string(),
@@ -191,7 +191,7 @@ private:
 	 *  @param pkl_uuid UUID of our PKL.
 	 *  @param pkl_path Pathname of our PKL file.
 	 */
-	void write_assetmap (
+	std::string write_assetmap (
 		Standard standard, std::string pkl_uuid, boost::filesystem::path pkl_path,
 		std::string issuer, std::string creator, std::string issue_date, std::string annotation_text
 		) const;
