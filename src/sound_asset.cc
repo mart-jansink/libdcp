@@ -74,7 +74,7 @@ SoundAsset::SoundAsset (boost::filesystem::path file)
 	}
 
 	ASDCP::PCM::AudioDescriptor desc;
-	if (ASDCP_FAILURE (reader.FillAudioDescriptor(desc))) {
+	if (ASDCP_FAILURE (reader.FillAudioDescriptor(desc)) || desc.AudioSamplingRate.Denominator == 0) {
 		boost::throw_exception (ReadError("could not read audio MXF information"));
 	}
 
