@@ -1,4 +1,3 @@
-245
 aao
 Algerian Saharan Arabic
 abh
@@ -50,7 +49,7 @@ Egyptian Arabic
 ase
 American Sign Language
 asf
-Auslan/Australian Sign Language
+Australian Sign Language
 asp
 Algerian Sign Language
 asq
@@ -102,13 +101,13 @@ Jinyu Chinese
 cmn
 Mandarin Chinese
 cnp
-Northern Ping Chinese/Northern Pinghua
+Northern Pinghua
 coa
 Cocos Islands Malay
 cpx
 Pu-Xian Chinese
 csc
-Catalan Sign Language/Lengua de señas catalana/Llengua de Signes Catalana
+Llengua de Signes Catalana
 csd
 Chiangmai Sign Language
 cse
@@ -122,13 +121,11 @@ Chinese Sign Language
 csn
 Colombian Sign Language
 csp
-Southern Ping Chinese/Southern Pinghua
+Southern Pinghua
 csq
 Croatia Sign Language
 csr
 Costa Rican Sign Language
-csx
-Cambodian Sign Language
 czh
 Huizhou Chinese
 czo
@@ -143,8 +140,6 @@ dup
 Duano
 ecs
 Ecuadorian Sign Language
-ehs
-Miyakubo Sign Language
 esl
 Egypt Sign Language
 esn
@@ -160,7 +155,7 @@ Finnish Sign Language
 fsl
 French Sign Language
 fss
-Finland-Swedish Sign Language/finlandssvenskt teckenspråk/suomenruotsalainen viittomakieli
+suomenruotsalainen viittomakieli
 gan
 Gan Chinese
 gds
@@ -188,11 +183,11 @@ Honduras Sign Language
 hji
 Haji
 hks
-Hong Kong Sign Language/Heung Kong Sau Yue
+Heung Kong Sau Yue
 hos
 Ho Chi Minh City Sign Language
 hps
-Hawai'i Sign Language (HSL)/Hawai'i Pidgin Sign Language
+Hawai'i Pidgin Sign Language
 hsh
 Hungarian Sign Language
 hsl
@@ -223,8 +218,6 @@ jcs
 Jamaican Country Sign Language
 jhs
 Jhankot Sign Language
-jks
-Amami Koniya Sign Language
 jls
 Jamaican Sign Language
 jos
@@ -248,15 +241,13 @@ Brunei
 lbs
 Libyan Sign Language
 lce
-Loncong/Sekak
+Sekak
 lcf
 Lubu
 liw
 Col
 lls
 Lithuanian Sign Language
-lsb
-Burundian Sign Language/Langue des Signes Burundaise
 lsg
 Lyons Sign Language
 lsl
@@ -266,7 +257,7 @@ Tibetan Sign Language
 lso
 Laos Sign Language
 lsp
-Panamanian Sign Language/Lengua de Señas Panameñas
+Lengua de Señas Panameñas
 lst
 Trinidad and Tobago Sign Language
 lsv
@@ -366,7 +357,7 @@ Philippine Sign Language
 psr
 Portuguese Sign Language
 pys
-Paraguayan Sign Language/Lengua de Señas del Paraguay
+Lengua de Señas del Paraguay
 rms
 Romanian Sign Language
 rsi
@@ -378,7 +369,7 @@ Miriwoong Sign Language
 sdl
 Saudi Arabian Sign Language
 sfb
-Langue des signes de Belgique Francophone/French Belgian Sign Language
+French Belgian Sign Language
 sfs
 South African Sign Language
 sgg
@@ -395,8 +386,6 @@ sqk
 Albanian Sign Language
 sqs
 Sri Lankan Sign Language
-sqx
-Kufr Qassem Sign Language (KQSL)
 ssh
 Shihhi Arabic
 ssp
@@ -408,7 +397,7 @@ Slovakian Sign Language
 swc
 Congo Swahili
 swh
-Swahili (individual language)/Kiswahili
+Kiswahili
 swl
 Swedish Sign Language
 syy
@@ -420,7 +409,7 @@ Temuan
 tse
 Tunisian Sign Language
 tsm
-Turkish Sign Language/Türk İşaret Dili
+Türk İşaret Dili
 tsq
 Thai Sign Language
 tss
@@ -436,7 +425,7 @@ Uruguayan Sign Language
 ukl
 Ukrainian Sign Language
 uks
-Urubú-Kaapor Sign Language/Kaapor Sign Language
+Kaapor Sign Language
 urk
 Urak Lawoi'
 uzn
@@ -444,7 +433,7 @@ Northern Uzbek
 uzs
 Southern Uzbek
 vgt
-Vlaamse Gebarentaal/Flemish Sign Language
+Flemish Sign Language
 vkk
 Kaur
 vkt
@@ -454,7 +443,7 @@ Moldova Sign Language
 vsl
 Venezuelan Sign Language
 vsv
-Valencian Sign Language/Llengua de signes valenciana
+Llengua de signes valenciana
 wbs
 West Bengal Sign Language
 wuu
@@ -475,10 +464,8 @@ yhs
 Yan-nhaŋu Sign Language
 ysl
 Yugoslavian Sign Language
-ysm
-Myanmar Sign Language
 yue
-Yue Chinese/Cantonese
+Cantonese
 zib
 Zimbabwe Sign Language
 zlm
