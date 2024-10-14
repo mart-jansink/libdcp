@@ -48,6 +48,7 @@ using namespace dcp;
 
 /** @param v_position Vertical position as a fraction of the screen height (between 0 and 1) from v_align */
 Subtitle::Subtitle (
+	int spot_number,
 	Time in,
 	Time out,
 	float h_position,
@@ -58,7 +59,8 @@ Subtitle::Subtitle (
 	Time fade_up_time,
 	Time fade_down_time
 	)
-	: _in (in)
+	: _spot_number (spot_number)
+	, _in (in)
 	, _out (out)
 	, _h_position (h_position)
 	, _h_align (h_align)

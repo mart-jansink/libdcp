@@ -52,6 +52,10 @@ class Subtitle
 public:
 	virtual ~Subtitle () {}
 
+	int spot_number () const {
+		return _spot_number;
+	}
+
 	/** @return subtitle start time (relative to the start of the reel) */
 	Time in () const {
 		return _in;
@@ -130,6 +134,7 @@ public:
 protected:
 
 	Subtitle (
+		int spot_number,
 		Time in,
 		Time out,
 		float h_position,
@@ -141,6 +146,7 @@ protected:
 		Time fade_down_time
 		);
 
+	int _spot_number = 0;
 	Time _in;
 	Time _out;
 	/** Horizontal position as a proportion of the screen width from the _h_align

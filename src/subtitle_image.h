@@ -85,6 +85,21 @@ public:
 		Time fade_down_time
 		);
 
+	SubtitleImage (
+		ArrayData png_image,
+		std::string id,
+		int spot_number,
+		Time in,
+		Time out,
+		float h_position,
+		HAlign h_align,
+		float v_position,
+		VAlign v_align,
+		float z_position,
+		Time fade_up_time,
+		Time fade_down_time
+		);
+
 	ArrayData png_image () const {
 		return _png_image;
 	}

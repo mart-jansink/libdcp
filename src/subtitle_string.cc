@@ -76,7 +76,49 @@ SubtitleString::SubtitleString (
 	Time fade_down_time,
 	float space_before
 	)
-	: Subtitle(in, out, h_position, h_align, v_position, v_align, z_position, fade_up_time, fade_down_time)
+	: Subtitle(0, in, out, h_position, h_align, v_position, v_align, z_position, fade_up_time, fade_down_time)
+	, _font (font)
+	, _italic (italic)
+	, _bold (bold)
+	, _underline (underline)
+	, _colour (colour)
+	, _size (size)
+	, _aspect_adjust (aspect_adjust)
+	, _direction (direction)
+	, _text (text)
+	, _effect (effect)
+	, _effect_colour (effect_colour)
+	, _space_before (space_before)
+{
+	_aspect_adjust = max(min(_aspect_adjust, 4.0f), 0.25f);
+}
+
+
+SubtitleString::SubtitleString (
+	optional<string> font,
+	bool italic,
+	bool bold,
+	bool underline,
+	Colour colour,
+	int size,
+	float aspect_adjust,
+	int spot_number,
+	Time in,
+	Time out,
+	float h_position,
+	HAlign h_align,
+	float v_position,
+	VAlign v_align,
+	float z_position,
+	Direction direction,
+	string text,
+	Effect effect,
+	Colour effect_colour,
+	Time fade_up_time,
+	Time fade_down_time,
+	float space_before
+	)
+	: Subtitle(spot_number, in, out, h_position, h_align, v_position, v_align, z_position, fade_up_time, fade_down_time)
 	, _font (font)
 	, _italic (italic)
 	, _bold (bold)

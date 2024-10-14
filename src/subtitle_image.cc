@@ -60,7 +60,7 @@ SubtitleImage::SubtitleImage (
 	Time fade_up_time,
 	Time fade_down_time
 	)
-	: Subtitle(in, out, h_position, h_align, v_position, v_align, z_position, fade_up_time, fade_down_time)
+	: Subtitle(0, in, out, h_position, h_align, v_position, v_align, z_position, fade_up_time, fade_down_time)
 	, _png_image (png_image)
 	, _id (make_uuid ())
 {
@@ -81,7 +81,29 @@ SubtitleImage::SubtitleImage (
 	Time fade_up_time,
 	Time fade_down_time
 	)
-	: Subtitle(in, out, h_position, h_align, v_position, v_align, z_position, fade_up_time, fade_down_time)
+	: Subtitle(0, in, out, h_position, h_align, v_position, v_align, z_position, fade_up_time, fade_down_time)
+	, _png_image (png_image)
+	, _id (id)
+{
+
+}
+
+
+SubtitleImage::SubtitleImage (
+	ArrayData png_image,
+	string id,
+	int spot_number,
+	Time in,
+	Time out,
+	float h_position,
+	HAlign h_align,
+	float v_position,
+	VAlign v_align,
+	float z_position,
+	Time fade_up_time,
+	Time fade_down_time
+	)
+	: Subtitle(spot_number, in, out, h_position, h_align, v_position, v_align, z_position, fade_up_time, fade_down_time)
 	, _png_image (png_image)
 	, _id (id)
 {

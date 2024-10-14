@@ -245,6 +245,7 @@ SubtitleAsset::ParseState
 SubtitleAsset::subtitle_node_state (xmlpp::Element const * node, optional<int> tcr) const
 {
 	ParseState ps;
+	ps.spot_number = optional_number_attribute<int> (node, "SpotNumber");
 	ps.in = Time (string_attribute(node, "TimeIn"), tcr);
 	ps.out = Time (string_attribute(node, "TimeOut"), tcr);
 	ps.fade_up_time = fade_time (node, "FadeUpTime", tcr);
@@ -375,6 +376,9 @@ SubtitleAsset::maybe_add_subtitle (string text, vector<ParseState> const & parse
 		if (i.direction) {
 			ps.direction = i.direction.get();
 		}
+		if (i.spot_number) {
+			ps.spot_number = i.spot_number.get();
+		}
 		if (i.in) {
 			ps.in = i.in.get();
 		}
@@ -410,6 +414,7 @@ SubtitleAsset::maybe_add_subtitle (string text, vector<ParseState> const & parse
 				ps.colour.get_value_or (dcp::Colour (255, 255, 255)),
 				ps.size.get_value_or (42),
 				ps.aspect_adjust.get_value_or (1.0),
+				ps.spot_number.get_value_or(0),
 				ps.in.get(),
 				ps.out.get(),
 				ps.h_position.get_value_or(0),
@@ -453,6 +458,7 @@ SubtitleAsset::maybe_add_subtitle (string text, vector<ParseState> const & parse
 			make_shared<SubtitleImage>(
 				ArrayData(),
 				text,
+				ps.spot_number.get(),
 				ps.in.get(),
 				ps.out.get(),
 				ps.h_position.get_value_or(0),

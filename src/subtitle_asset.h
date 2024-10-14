@@ -154,6 +154,7 @@ protected:
 		boost::optional<VAlign> v_align;
 		boost::optional<float> z_position;
 		boost::optional<Direction> direction;
+		boost::optional<int> spot_number;
 		boost::optional<Time> in;
 		boost::optional<Time> out;
 		boost::optional<Time> fade_up_time;

@@ -64,6 +64,7 @@ public:
 	 *  @param colour Colour of the text
 	 *  @param size Size in points as if the screen height is 11 inches, so a 72pt font would be 1/11th of the screen height
 	 *  @param aspect_adjust greater than 1 to stretch text to be wider, less than 1 to shrink text to be narrower (must be between 0.25 and 4)
+	 *  @param spot_number spot number
 	 *  @param in start time
 	 *  @param out finish time
 	 *  @param h_position Horizontal position as a fraction of the screen width (between 0 and 1) from h_align
@@ -88,6 +89,31 @@ public:
 		Colour colour,
 		int size,
 		float aspect_adjust,
+		Time in,
+		Time out,
+		float h_position,
+		HAlign h_align,
+		float v_position,
+		VAlign v_align,
+		float z_position,
+		Direction direction,
+		std::string text,
+		Effect effect,
+		Colour effect_colour,
+		Time fade_up_time,
+		Time fade_down_time,
+		float space_before
+		);
+
+	SubtitleString (
+		boost::optional<std::string> font,
+		bool italic,
+		bool bold,
+		bool underline,
+		Colour colour,
+		int size,
+		float aspect_adjust,
+		int spot_number,
 		Time in,
 		Time out,
 		float h_position,
