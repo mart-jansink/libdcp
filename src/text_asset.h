@@ -159,6 +159,7 @@ protected:
 		boost::optional<float> z_position;
 		boost::optional<std::string> variable_z;
 		boost::optional<Direction> direction;
+		boost::optional<int> spot_number;
 		boost::optional<Time> in;
 		boost::optional<Time> out;
 		boost::optional<Time> fade_up_time;

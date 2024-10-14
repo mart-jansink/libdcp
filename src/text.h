@@ -62,6 +62,15 @@ public:
 		return _in;
 	}
 
+	/** @return SpotNumber attribute as read from a subtitle file, or 0 if it was absent */
+	int spot_number() const {
+		return _spot_number;
+	}
+
+	void set_spot_number(int spot_number) {
+		_spot_number = spot_number;
+	}
+
 	/** @return text finish time (relative to the start of the reel) */
 	Time out () const {
 		return _out;
@@ -161,6 +170,7 @@ protected:
 		Time fade_down_time
 		);
 
+	int _spot_number = 0;
 	Time _in;
 	Time _out;
 	/** Horizontal position as a proportion of the screen width from the _h_align

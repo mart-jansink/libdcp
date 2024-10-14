@@ -247,6 +247,7 @@ TextAsset::ParseState
 TextAsset::subtitle_node_state(xmlpp::Element const * node, optional<int> tcr) const
 {
 	ParseState ps;
+	ps.spot_number = optional_number_attribute<int> (node, "SpotNumber");
 	ps.in = Time (string_attribute(node, "TimeIn"), tcr);
 	ps.out = Time (string_attribute(node, "TimeOut"), tcr);
 	ps.fade_up_time = fade_time (node, "FadeUpTime", tcr);
@@ -472,6 +473,9 @@ TextAsset::maybe_add_text(
 		if (i.direction) {
 			ps.direction = i.direction.get();
 		}
+		if (i.spot_number) {
+			ps.spot_number = i.spot_number.get();
+		}
 		if (i.in) {
 			ps.in = i.in.get();
 		}
@@ -538,6 +542,7 @@ TextAsset::maybe_add_text(
 				rubies
 				)
 			);
+		_texts.back()->set_spot_number(ps.spot_number.get_value_or(0));
 		break;
 	}
 	case ParseState::Type::IMAGE:
@@ -584,6 +589,7 @@ TextAsset::maybe_add_text(
 				ps.fade_down_time.get_value_or(Time())
 				)
 			);
+		_texts.back()->set_spot_number(ps.spot_number.get_value_or(0));
 
 		_image_texts++;
 		break;
