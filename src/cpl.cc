@@ -93,8 +93,8 @@ auto constexpr profile_tag = "DCP Constraints Profile";
 
 CPL::CPL(string annotation_text, ContentKind content_kind, Standard standard, Profile profile)
 	/* default _content_title_text to annotation_text */
-	: _issuer("libdcp", dcp::version)
-	, _creator("libdcp", dcp::version)
+	: _issuer(fmt::format("libdcp {}", dcp::version))
+	, _creator(fmt::format("libdcp {}", dcp::version))
 	, _issue_date(LocalTime().as_string())
 	, _annotation_text(annotation_text)
 	, _content_title_text(annotation_text)
