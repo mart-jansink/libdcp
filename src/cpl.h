@@ -158,6 +158,10 @@ public:
 		_creator = creator;
 	}
 
+	std::string issue_date() const {
+		return _issue_date;
+	}
+
 	void set_issue_date(std::string issue_date) {
 		_issue_date = issue_date;
 	}
