@@ -55,12 +55,14 @@ class OpenJPEGImage;
  *  e.g. 0 reduces by (2^0 == 1), ie keeping the same size.
  *       1 reduces by (2^1 == 2), ie halving the size of the image.
  *  This is useful for scaling 4K DCP images down to 2K.
+ *  @param metal true to request openjpeg's macOS Metal Tier-1 decoding backend via METAL_T1=YES
+ *  (ignored if the openjpeg in use has no opj_decoder_set_extra_options()).
  *  @return OpenJPEGImage
  */
-extern std::shared_ptr<OpenJPEGImage> decompress_j2k (uint8_t const * data, int64_t size, int reduce);
+extern std::shared_ptr<OpenJPEGImage> decompress_j2k (uint8_t const * data, int64_t size, int reduce, bool metal = false);
 
-extern std::shared_ptr<OpenJPEGImage> decompress_j2k (Data const& data, int reduce);
-extern std::shared_ptr<OpenJPEGImage> decompress_j2k (std::shared_ptr<const Data> data, int reduce);
+extern std::shared_ptr<OpenJPEGImage> decompress_j2k (Data const& data, int reduce, bool metal = false);
+extern std::shared_ptr<OpenJPEGImage> decompress_j2k (std::shared_ptr<const Data> data, int reduce, bool metal = false);
 
 /** @xyz Picture to compress.  Parts of xyz's data WILL BE OVERWRITTEN by libopenjpeg so xyz cannot be re-used
  *  after this call; see opj_j2k_encode where if l_reuse_data is false it will set l_tilec->data = l_img_comp->data.

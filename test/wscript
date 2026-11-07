@@ -83,6 +83,7 @@ def build(bld):
                  decryption_test.cc
                  effect_test.cc
                  encryption_test.cc
+                 j2k_metal_decode_test.cc
                  exception_test.cc
                  filesystem_test.cc
                  fraction_test.cc

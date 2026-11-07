@@ -117,13 +117,13 @@ StereoJ2KPictureFrame::StereoJ2KPictureFrame ()
  *  reduction).
  */
 shared_ptr<OpenJPEGImage>
-StereoJ2KPictureFrame::xyz_image (Eye eye, int reduce) const
+StereoJ2KPictureFrame::xyz_image (Eye eye, int reduce, bool metal) const
 {
 	switch (eye) {
 	case Eye::LEFT:
-		return decompress_j2k (const_cast<uint8_t*>(_buffer->Left.RoData()), _buffer->Left.Size(), reduce);
+		return decompress_j2k (const_cast<uint8_t*>(_buffer->Left.RoData()), _buffer->Left.Size(), reduce, metal);
 	case Eye::RIGHT:
-		return decompress_j2k (const_cast<uint8_t*>(_buffer->Right.RoData()), _buffer->Right.Size(), reduce);
+		return decompress_j2k (const_cast<uint8_t*>(_buffer->Right.RoData()), _buffer->Right.Size(), reduce, metal);
 	}
 
 	return {};

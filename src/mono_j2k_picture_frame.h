@@ -83,7 +83,7 @@ public:
 	 *  of the image, expressed as a power of two (pass 0 for no
 	 *  reduction).
 	 */
-	std::shared_ptr<OpenJPEGImage> xyz_image (int reduce = 0) const;
+	std::shared_ptr<OpenJPEGImage> xyz_image (int reduce = 0, bool metal = false) const;
 
 	/** @return Pointer to JPEG2000 data */
 	uint8_t const * data () const override;

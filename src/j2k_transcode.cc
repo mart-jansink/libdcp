@@ -55,16 +55,16 @@ using namespace dcp;
 
 
 shared_ptr<dcp::OpenJPEGImage>
-dcp::decompress_j2k (Data const& data, int reduce)
+dcp::decompress_j2k (Data const& data, int reduce, bool metal)
 {
-	return dcp::decompress_j2k (data.data(), data.size(), reduce);
+	return dcp::decompress_j2k (data.data(), data.size(), reduce, metal);
 }
 
 
 shared_ptr<dcp::OpenJPEGImage>
-dcp::decompress_j2k (shared_ptr<const Data> data, int reduce)
+dcp::decompress_j2k (shared_ptr<const Data> data, int reduce, bool metal)
 {
-	return dcp::decompress_j2k (data->data(), data->size(), reduce);
+	return dcp::decompress_j2k (data->data(), data->size(), reduce, metal);
 }
 
 
@@ -121,7 +121,7 @@ compress_error_callback (char const * msg, void *)
 
 
 shared_ptr<dcp::OpenJPEGImage>
-dcp::decompress_j2k (uint8_t const * data, int64_t size, int reduce)
+dcp::decompress_j2k (uint8_t const * data, int64_t size, int reduce, bool metal)
 {
 	DCP_ASSERT (reduce >= 0);
 
@@ -149,6 +149,15 @@ dcp::decompress_j2k (uint8_t const * data, int64_t size, int reduce)
 	opj_set_default_decoder_parameters (&parameters);
 	parameters.cp_reduce = reduce;
 	opj_setup_decoder (decoder, &parameters);
+
+#ifdef OPJ_HAVE_DECODER_EXTRA_OPTIONS
+	if (metal) {
+		char const* extra_options[] = { "METAL_T1=YES", nullptr };
+		opj_decoder_set_extra_options(decoder, extra_options);
+	}
+#else
+	(void) metal;
+#endif
 
 	auto stream = opj_stream_default_create (OPJ_TRUE);
 	if (!stream) {

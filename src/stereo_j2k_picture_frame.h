@@ -75,7 +75,7 @@ public:
 	StereoJ2KPictureFrame (StereoJ2KPictureFrame const &) = delete;
 	StereoJ2KPictureFrame& operator= (StereoJ2KPictureFrame const &) = delete;
 
-	std::shared_ptr<OpenJPEGImage> xyz_image (Eye eye, int reduce = 0) const;
+	std::shared_ptr<OpenJPEGImage> xyz_image (Eye eye, int reduce = 0, bool metal = false) const;
 
 	class Part : public Data
 	{
